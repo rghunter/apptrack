@@ -1,0 +1,22 @@
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html>
+ <head>
+     <title>Beneath the Sea Scholarships</title>
+</head>        
+ <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+         <p class="navbar-brand">{% block title %}{% endblock %}</p>
+    </nav>
+
+    <div class="container">
+
+{% block body %}
+{% endblock %}
+
+    </div>
+  </body>
+</html>
