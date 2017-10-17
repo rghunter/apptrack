@@ -59,6 +59,7 @@ class RecommendationLetter(models.Model):
     daytime_phone = models.CharField(max_length=50)
     mobile_phone = models.CharField(max_length=50, blank=True)
     relationship = models.CharField(max_length=200)
+    letter = models.TextField()
 
 class RecommendationLetterForm(ModelForm):
     class Meta:

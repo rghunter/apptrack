@@ -3,7 +3,8 @@ version: '3'
 services:
   db:
     image: postgres
-  web:
+  apptrack:
+    image: apptrack
     build: .
     command: sh run.sh
     volumes:
