@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.forms import ModelForm
 from django.conf import settings
+import uuid
 
 class Scholarship(models.Model):
     name = models.CharField(max_length=50)
@@ -10,6 +11,7 @@ class Scholarship(models.Model):
        return self.name
 
 class Application(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     scholarship = models.ForeignKey(Scholarship, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -45,14 +47,21 @@ class ApplicationForm(ModelForm):
         model = Application
         fields = '__all__'
 
-class ApplicationEssay(models.Model):
-    application = models.ForeignKey(Application, on_delete=models.CASCADE)
-    essay = models.TextField()
-
-
 class RecommendationLetter(models.Model):
     application = models.ForeignKey(Application, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    address = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    state = models.CharField(max_length=50)
+    zip_code = models.CharField(max_length=50)
+    daytime_phone = models.CharField(max_length=50)
+    mobile_phone = models.CharField(max_length=50, blank=True)
+    relationship = models.CharField(max_length=200)
 
+class RecommendationLetterForm(ModelForm):
+    class Meta:
+        model = RecommendationLetter
+        exclude = ['application']
 
-
-# Create your models here.
