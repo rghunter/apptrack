@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models import ApplicationForm, RecommendationLetterForm
+from apptrack.models import ApplicationForm, RecommendationLetterForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 
