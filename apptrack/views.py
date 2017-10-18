@@ -17,7 +17,7 @@ def application(request):
         return HttpResponse(template.render({ "form" : ApplicationForm(request.POST) }, request))
     return HttpResponse(template.render({ "form" : ApplicationForm() }, request))
 
-def letterofrec(request, application_id):
+def recommend(request, application_id):
     template = loader.get_template('apptrack/form.html')
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
