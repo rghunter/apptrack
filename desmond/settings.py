@@ -77,6 +77,14 @@ WSGI_APPLICATION = 'desmond.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
 DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 EMAIL_BACKEND = 'django_ses.SESBackend'
