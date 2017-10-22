@@ -6,7 +6,7 @@ services:
   apptrack:
     image: apptrack
     build: .
-    command: sh run.sh
+    command: /usr/bin/heroku local -p 8000 
     volumes:
       - .:/code
     ports:
