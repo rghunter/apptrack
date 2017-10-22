@@ -7,3 +7,5 @@
 *.swp
 .env
 db.sqlite3
+
+.idea
