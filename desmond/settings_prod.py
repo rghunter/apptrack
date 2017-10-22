@@ -4,7 +4,7 @@ import json
 
 
 ## Setup Mailtrap
-request = Request("https://mailtrap.io/api/v1/inboxes.json?api_token={}".format(os.environ['MAILTRAP_API_TOKEN'])
+request = Request("https://mailtrap.io/api/v1/inboxes.json?api_token={}".format(os.environ['MAILTRAP_API_TOKEN']))
 response_body = urlopen(request).read()
 credentials = json.loads(response_body)[0]
 
