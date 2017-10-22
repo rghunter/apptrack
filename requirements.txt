@@ -3,5 +3,5 @@ Django==1.10.5
 gunicorn==19.6.0
 psycopg2==2.6.2
 whitenoise==3.2
-django-ses==0.8.1
 django-bootstrap3==8.1.0
+django-templated-email==2.2.0

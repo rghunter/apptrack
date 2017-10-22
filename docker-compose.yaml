@@ -2,11 +2,17 @@ version: '3'
 
 services:
   db:
-    image: postgres
+    image: postgres:9.6  # Current version on heroku
+    environment:
+      - POSTGRES_DB=apptrack
+      - POSTGRES_PASSWORD=development
   apptrack:
     image: apptrack
     build: .
-    command: /usr/bin/heroku local -p 8000 
+    environment:
+      - DATABASE_URL=postgres://postgres:development@db:5432/apptrack
+    # command: /usr/bin/heroku local -p 8000 
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:

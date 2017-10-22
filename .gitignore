@@ -5,4 +5,5 @@
 !.elasticbeanstalk/*.global.yml
 *.pyc
 *.swp
+.env
 db.sqlite3

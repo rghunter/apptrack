@@ -17,6 +17,8 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +29,7 @@ SECRET_KEY = ')d06278x1-k7q4%2=cwp5$2z^8y-vrtvep0s^p^t&*gkcv!cq4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'django_ses',
     'bootstrap3'
 ]
 
@@ -90,11 +92,6 @@ DATABASES = {
 
 
 DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
-
-EMAIL_BACKEND = 'django_ses.SESBackend'
-DEFAULT_FROM_EMAIL= 'admin@ryanhunter.co'
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

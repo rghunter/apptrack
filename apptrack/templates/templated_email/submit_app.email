@@ -1,0 +1,12 @@
+{% block subject %}My subject for {{Full_name}}{% endblock %}
+{% block html %}
+  <p>Hi {{full_name}},</p>
+
+  <p>Thanks for submitting an application for {{ scholarship_name }}.
+      <dl>
+        <dt>recomendations</dt><dd><a href="{{ lor_url }}">{{ lor_url }}</dd>
+      </dl>
+  </p>
+
+  <p>Thanks, you rock!</p>
+{% endblock %}
