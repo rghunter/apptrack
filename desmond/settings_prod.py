@@ -9,10 +9,9 @@ response_body = urlopen(request).read()
 credentials = json.loads(response_body)[0]
 
 EMAIL_HOST = credentials['domain']
-EMAIL_HOST_USER = credentials['username']
-EMAIL_HOST_PASSWORD = credentials['password']
-EMAIL_PORT = credentials['smtp_ports'][0]
-EMAIL_USE_TLS = True
+EMAIL_HOST_USER = str(credentials['username'])
+EMAIL_HOST_PASSWORD = str(credentials['password'])
+EMAIL_PORT = credentials['smtp_ports'][2]
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
