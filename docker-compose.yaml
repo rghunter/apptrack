@@ -11,6 +11,7 @@ services:
     build: .
     environment:
       - DATABASE_URL=postgres://postgres:development@db:5432/apptrack
+      - SECRET_KEY=SuperSecret
     # command: /usr/bin/heroku local -p 8000 
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
