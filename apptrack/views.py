@@ -43,7 +43,7 @@ def recommend(request, application_id):
             f = app.save(commit=False)
             f.application_id = application_id
             f.save()
-            return HttpResponse(loader.get_template('apptrack/finish.html').render())
+            return HttpResponse(loader.get_template('apptrack/submit_lor.html').render())
         return HttpResponse(template.render({ "form" : RecommendationLetterForm(request.POST) }, request))
     return HttpResponse(template.render({ "form" : RecommendationLetterForm() }, request))
 

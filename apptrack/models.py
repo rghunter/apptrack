@@ -51,6 +51,7 @@ class RecommendationLetter(models.Model):
     application = models.ForeignKey(Application, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
     email = models.EmailField()
     address = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
@@ -58,7 +59,8 @@ class RecommendationLetter(models.Model):
     zip_code = models.CharField(max_length=50)
     daytime_phone = models.CharField(max_length=50)
     mobile_phone = models.CharField(max_length=50, blank=True)
-    relationship = models.CharField(max_length=200)
+    relationship = models.CharField(max_length=200, verbose_name="Your relationship with the scholarship applicant (e.g., teacher, counsellor, employer, etc.)")
+    num_years = models.IntegerField(verbose_name="Number of years you have known the applicant")
     letter = models.TextField()
 
 class RecommendationLetterForm(ModelForm):
