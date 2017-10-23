@@ -13,6 +13,6 @@ EMAIL_HOST_USER = str(credentials['username'])
 EMAIL_HOST_PASSWORD = str(credentials['password'])
 EMAIL_PORT = credentials['smtp_ports'][2]
 
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['bts-scholarship.herokuapp.com']
 
