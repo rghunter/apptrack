@@ -1,12 +1,18 @@
-{% extends "apptrack/base.html" %}
-
-
 {% load bootstrap3 %}
-{% bootstrap_css %}
-
+{% extends "apptrack/base.html" %}
 {% block body %}
+<p>Dear Scholarship Applicant:</p>
 
-<h1>Thanks</h1>
+<p>We have received your scholarship application form.  Your application will not be complete until we receive two letters of recommendation (LOR) on your behalf by the scholarship deadline. Approximately six weeks after the application deadline, all applicants will be notified of the judges’ decisions.</p>
+
+<p>Here are some important points to keep in mind when selecting your references:</p>
+<ol>
+    <li>The reference should be able to speak to strengths, skills, experiences, etc. relevant to the applicant’s stated reason for applying to this specific scholarship. It is recommended that you give a copy of the scholarship description so that they understand the scholarship requirements.</li>
+    <li>References from family members, while heartfelt, carry less weight than references from a teacher, coach, employer, or non-family member, etc.</li>
+    <li>It is recommended that you give your references at least two weeks’ notice to ensure that their letter arrives on or before the deadline.</li> 
+    <li>If you or your references have any questions or inquiries, contact us at scholarships@BeneathTheSea.org.</li>
+</ol>
+<p>Please send this link to your references, with a copy of the scholarship you are applying for and the deadline date, so that they can submit your letters of recommendation online on or before the deadline.</p>
 
 <p>You can submit letters of recomendation via:</p>
 <a href="{{ lor_url }}">{{ lor_url }}</a>
